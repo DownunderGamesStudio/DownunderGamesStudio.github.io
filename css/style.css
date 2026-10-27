@@ -1,0 +1,319 @@
+/* ============================================================
+   Downunder Games — site stylesheet
+   ------------------------------------------------------------
+   Everything is themed from the variables below. Change a
+   variable once and the whole site follows.
+   ============================================================ */
+
+:root {
+  /* Colors */
+  --bg: #0e1a2b;          /* page background (deep navy) */
+  --bg-soft: #13233a;     /* alternate section background */
+  --surface: #1a2c46;    /* cards */
+  --line: #27405f;       /* borders */
+  --text: #e8eef5;       /* main text */
+  --text-soft: #9db0c8;  /* secondary text */
+  --accent: #e9a13b;     /* brand accent (gold) */
+  --accent-soft: #f0c083;
+  --steam: #66c2ff;      /* Steam button blue */
+
+  /* Layout */
+  --max-width: 960px;
+  --radius: 10px;
+}
+
+/* ---------- Base ---------- */
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+img, svg { display: block; max-width: 100%; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+h1, h2, h3 {
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: 2.4rem; margin: 0.4em 0; }
+h2 { font-size: 1.6rem; margin: 0 0 0.6em; }
+h3 { font-size: 1.15rem; margin: 0 0 0.4em; }
+
+p { margin: 0 0 1em; }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section { padding: 56px 0; }
+
+.eyebrow {
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--text-soft);
+  margin: 0 0 8px;
+}
+
+.lead {
+  font-size: 1.15rem;
+  color: var(--text-soft);
+  max-width: 620px;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.btn:hover { text-decoration: none; }
+
+.btn-primary {
+  background: var(--accent);
+  color: #1b1408;
+}
+.btn-primary:hover { background: var(--accent-soft); }
+
+.btn-secondary {
+  border-color: var(--line);
+  color: var(--text);
+}
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+.btn-steam {
+  background: #1b2838;
+  border-color: var(--steam);
+  color: var(--steam);
+}
+.btn-steam:hover { background: var(--steam); color: #0b1524; }
+
+/* ---------- Header / nav ---------- */
+
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+.nav-logo:hover { text-decoration: none; }
+.nav-logo svg { flex: none; }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  color: var(--text-soft);
+  font-weight: 500;
+}
+.nav-links a:hover,
+.nav-links a[aria-current="page"] { color: var(--text); }
+
+/* Mobile nav toggle (hidden on desktop) */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 1.3rem;
+  line-height: 1;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .nav-toggle { display: block; }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 12px;
+  }
+  .nav.open { flex-direction: column; align-items: stretch; }
+  .nav.open .nav-links { display: flex; gap: 14px; }
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  padding: 88px 0 72px;
+  text-align: center;
+  background:
+    linear-gradient(180deg, var(--bg-soft) 0%, var(--bg) 100%);
+  border-bottom: 1px solid var(--line);
+}
+
+.hero .container { max-width: 720px; }
+
+.hero h1 { margin-top: 8px; }
+
+.hero .cta-row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+/* ---------- Game card ---------- */
+
+.game-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+
+@media (max-width: 720px) {
+  .game-card { grid-template-columns: 1fr; }
+}
+
+.game-card .game-art {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+.game-card .game-art svg { width: 100%; height: auto; }
+
+.game-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 12px;
+}
+
+.tag {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-soft);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+
+.game-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
+
+/* ---------- About / generic sections ---------- */
+
+.section-alt { background: var(--bg-soft); }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+@media (max-width: 720px) {
+  .about-grid { grid-template-columns: 1fr; }
+}
+
+.value-list { list-style: none; padding: 0; margin: 0; }
+.value-list li {
+  padding: 10px 0 10px 28px;
+  position: relative;
+  border-bottom: 1px solid var(--line);
+}
+.value-list li:last-child { border-bottom: 0; }
+.value-list li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 18px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* ---------- Contact ---------- */
+
+.contact-box {
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* ---------- Page header (inner pages) ---------- */
+
+.page-header {
+  padding: 64px 0 32px;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, var(--bg-soft) 0%, var(--bg) 100%);
+}
+.page-header p { color: var(--text-soft); max-width: 620px; }
+
+/* ---------- 404 ---------- */
+
+.not-found {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.not-found .code { font-size: 4rem; font-weight: 800; color: var(--accent); }
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 28px 0;
+  margin-top: 24px;
+  color: var(--text-soft);
+  font-size: 0.9rem;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.footer-links { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
+.footer-links a { color: var(--text-soft); }
+.footer-links a:hover { color: var(--text); }

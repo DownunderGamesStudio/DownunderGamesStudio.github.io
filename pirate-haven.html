@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pirate Haven — Downunder Games</title>
+  <meta name="description" content="Pirate Haven is a roguelike pirate action adventure on Steam. Battle other pirates, search for booty, upgrade your ship, and climb the leaderboards.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== Header / navigation — same block on every page ===== -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav" id="nav" aria-label="Main">
+        <a class="nav-logo" href="index.html">
+          <svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="12" fill="#1a2c46"/>
+            <g fill="none" stroke="#e9a13b" stroke-width="4" stroke-linecap="round">
+              <circle cx="32" cy="15" r="5"/>
+              <line x1="32" y1="20" x2="32" y2="48"/>
+              <line x1="23" y1="27" x2="41" y2="27"/>
+              <path d="M14 40 a18 18 0 0 0 36 0"/>
+            </g>
+          </svg>
+          Downunder Games
+        </a>
+        <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">☰</button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="pirate-haven.html" aria-current="page">Pirate Haven</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Page header ===== -->
+  <div class="page-header">
+    <div class="container">
+      <p class="eyebrow">Released game</p>
+      <h1>Pirate Haven</h1>
+      <p class="lead">Sail the seas as a pirate captain in this challenging roguelike action adventure. Battle other pirates, search for booty, and upgrade your ship at ports — every run gets harder, and every rank up gets more interesting.</p>
+    </div>
+  </div>
+
+  <!-- ===== Game intro card ===== -->
+  <section>
+    <div class="container">
+      <div class="game-card">
+        <!-- Placeholder key art (inline SVG). Replace this <svg> block with
+             <img src="img/pirate-haven.jpg" alt="Pirate Haven key art">
+             when you have real artwork. -->
+        <div class="game-art" aria-hidden="false">
+          <svg viewBox="0 0 800 450" role="img" aria-label="Stylised illustration of a pirate ship sailing at dusk">
+            <defs>
+              <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#28486e"/>
+                <stop offset="1" stop-color="#5d86b5"/>
+              </linearGradient>
+              <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#2a4a70"/>
+                <stop offset="1" stop-color="#12263d"/>
+              </linearGradient>
+            </defs>
+            <rect width="800" height="300" fill="url(#sky)"/>
+            <rect y="300" width="800" height="150" fill="url(#sea)"/>
+            <circle cx="640" cy="92" r="56" fill="#f4e3c1" opacity="0.15"/>
+            <circle cx="640" cy="92" r="42" fill="#f4e3c1" opacity="0.9"/>
+            <g fill="#ffffff" opacity="0.08">
+              <rect x="60" y="330" width="180" height="6" rx="3"/>
+              <rect x="560" y="355" width="150" height="6" rx="3"/>
+              <rect x="120" y="385" width="120" height="6" rx="3"/>
+              <rect x="640" y="405" width="100" height="6" rx="3"/>
+            </g>
+            <g fill="#0a1626">
+              <path d="M342 130 L412 130 L412 250 L342 232 Z"/>
+              <path d="M330 142 L252 252 L330 252 Z"/>
+              <rect x="336" y="112" width="6" height="196"/>
+              <rect x="272" y="150" width="132" height="5"/>
+              <path d="M339 100 L362 108 L339 116 Z"/>
+              <path d="M232 300 L478 300 L448 338 Q330 354 262 338 Z"/>
+            </g>
+          </svg>
+        </div>
+        <div>
+          <div class="game-meta">
+            <span class="tag">Action</span>
+            <span class="tag">Adventure</span>
+            <span class="tag">Indie</span>
+            <span class="tag">Single-player</span>
+          </div>
+          <p>As the world level climbs, more interesting events start to happen: bigger ships, stronger cannons, and more to gain — but the enemy pirates level up too. Score, exp, and upgrades all scale with the challenge, so there's always a run worth pushing.</p>
+          <div class="game-actions">
+            <a class="btn btn-steam" href="https://store.steampowered.com/app/2535910/Pirate_Haven/" target="_blank" rel="noopener">Buy on Steam</a>
+            <a class="btn btn-secondary" href="https://steamcommunity.com/app/2535910" target="_blank" rel="noopener">Community Hub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Features ===== -->
+  <section class="section-alt">
+    <div class="container">
+      <h2>What you'll be doing</h2>
+      <div class="about-grid">
+        <ul class="value-list">
+          <li>Explore a vast procedurally generated world</li>
+          <li>Fight other pirates in ship-to-ship combat</li>
+          <li>Search for booty and upgrade your ship with extra cannons and size</li>
+          <li>Grab power-ups — speed boosts, accuracy boosts, shot velocity boosts</li>
+          <li>Go fishing and try to catch every fish for achievements</li>
+        </ul>
+        <ul class="value-list">
+          <li>Survive dangerous boss events and storm events</li>
+          <li>Manually aim cannon shots — estimate the flight time and lead your target</li>
+          <li>Climb the weekly and all-time score leaderboards</li>
+          <li>Max out the world level and see how far you can push it</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Info: release details & requirements ===== -->
+  <section>
+    <div class="container">
+      <div class="about-grid">
+        <div>
+          <h3>At a glance</h3>
+          <ul class="value-list">
+            <li>Released February 15, 2024 (Early Access from September 2023)</li>
+            <li>Platform: Windows (64-bit), PC</li>
+            <li>Genres: Action, Adventure, Indie</li>
+            <li>Single-player, with Steam Achievements and leaderboards</li>
+            <li>Designed for mouse &amp; keyboard (partial controller support)</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Minimum requirements</h3>
+          <ul class="value-list">
+            <li>Windows 10 / 11 (64-bit)</li>
+            <li>Processor: Intel Core i5-3570 or equivalent</li>
+            <li>Memory: 4 GB RAM</li>
+            <li>Graphics: NVIDIA GeForce GTX 560 or equivalent, DirectX 11</li>
+            <li>Storage: 500 MB available space</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer — same block on every page ===== -->
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <p>© <span id="year">2026</span> Downunder Games Studio. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="pirate-haven.html">Pirate Haven</a></li>
+        <li><a href="https://store.steampowered.com/app/2535910/Pirate_Haven/" target="_blank" rel="noopener">Steam</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
