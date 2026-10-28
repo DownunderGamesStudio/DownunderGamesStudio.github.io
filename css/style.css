@@ -132,7 +132,7 @@ section { padding: 56px 0; }
   color: var(--text);
 }
 .nav-logo:hover { text-decoration: none; }
-.nav-logo svg { flex: none; }
+.nav-logo img { flex: none; }
 
 .nav-links {
   display: flex;
